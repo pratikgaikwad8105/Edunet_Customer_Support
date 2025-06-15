@@ -1,5 +1,6 @@
 from groq import Groq
 import os
+import streamlit as st
 
 system_prompt = """
                     You are a Customer Care Support representative for Edunet Foundation. Your role is to help students, participants, and stakeholders resolve issues, answer questions, and provide information related to Edunet Foundation's programs, initiatives, certifications, internships, workshops, or services.
@@ -13,7 +14,7 @@ system_prompt = """
                """
 
 client = Groq(
-    api_key=os.getenv("GROQ_API_KEY"),
+    api_key=st.secrets["GROQ_API_KEY"],
 )
 
 conversation_history = [
